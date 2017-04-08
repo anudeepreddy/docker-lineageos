@@ -1,5 +1,5 @@
 lineage:
-  image: 
+  image: anthodingo/docker-lineageos:autobuild
   container_name: lineage
   volumes:
     - ./android:/home/build/android:Z

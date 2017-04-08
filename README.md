@@ -18,7 +18,7 @@ The main working directory is a shared folder on the host system, so the Docker 
 ### How to build LineageOS for your device
 
 ```
-docker run -d --name lineageos -v ./android:/home/build/android:z -v ./ccache:/srv/ccache:z -e GITUSER="Your Name" -e GITMAIL="you@exeample.com" -e PRODUCT="terminalcodename" anthodingo/docker-lineage:autobuild
+docker run -d --name lineageos -v ./android:/home/build/android:z -v ./ccache:/srv/ccache:z -e GITUSER="Your Name" -e GITMAIL="you@exeample.com" -e PRODUCT="terminalcodename" anthodingo/docker-lineageos:autobuild
 ```
 
 or with compose
