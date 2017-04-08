@@ -31,11 +31,14 @@ docker-compose up -d
 
 | Variable | Description | Type | Default value | Example |
 | -------- | ----------- | ---- | ------------- | ------- |
-| **GITUSER** | Username for git | *Required* | | Your Name
-| **GITMAIL** | User email for git | *Required* | | you@example.com
-| **PRODUCT** | Terminal code name | *Required* | | shamu
+| **GITUSER** | Username for git | _**Required**_ | | Your Name
+| **GITMAIL** | User email for git | _**Required**_ | | you@example.com
+| **PRODUCT** | Terminal code name | _**Required**_ | | shamu
 | **BRANCH** | LineageOS Branch | *optional* | cm-14.1 |
-| **REPO** | Change OTA server url | *optional* | https://download.lineageos.org/api
+| **REPO** | Change OTA server url | *optional* | https://download.lineageos.org/api | https://my.repo.com/api
+| **POSTBUILD** | Post build script to exec | *optional* |  |/home/build/android/postBuild.sh
+
+*Make sure your script has 754 access to user 1000:1000*
 
 ### Links
 

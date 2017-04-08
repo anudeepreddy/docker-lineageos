@@ -74,4 +74,8 @@ echo "============================================"
 croot
 brunch $PRODUCT
 
+if [ -n $POSTBUILD ]; then
+	exec $POSTBUILD
+fi
+
 exit 0
