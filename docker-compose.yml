@@ -1,0 +1,13 @@
+lineage:
+  image: 
+  container_name: lineage
+  volumes:
+    - ./android:/home/build/android:Z
+    - ./ccache:/srv/ccache:Z
+  environment:
+    - GITUSER=Your Name
+    - GITMAIL=you@example.com
+    - PRODUCT=flounder
+    #Optionnal
+    #- BRANCH=cm-14.1
+    #- REPO=https://download.lineageos.org/api
