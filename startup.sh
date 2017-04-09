@@ -61,7 +61,7 @@ export USE_CCACHE=1
 #Fix Jack out of memory
 export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
 
-if [ -z $REPO ]; then
+if [ -n $REPO ]; then
 		echo "============================================"
         echo "Replacing OTA server"
 		echo "============================================"
