@@ -4,6 +4,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
+ - Full automated script
+ - Add Prebuild and Postbuild
+ - Option to change OTA update server
+
+## [Unreleased][unreleased]
+### Added
 - Rename the project from "docker-cyanogenmod" to "docker-lineageos"
 - Change all references of "CyanogenMod" to "LineageOS", see http://lineageos.org/
 - Rename user "cmbuild" to "build"

@@ -34,6 +34,7 @@ docker-compose up -d
 | **GITUSER** | Username for git | _**Required**_ | | Your Name
 | **GITMAIL** | User email for git | _**Required**_ | | you@example.com
 | **PRODUCT** | Terminal code name | _**Required**_ | | shamu
+| **FORCESYNC** | Force repo sync | *optional* | false |
 | **BRANCH** | LineageOS Branch | *optional* | cm-14.1 |
 | **REPO** | Change OTA server url | *optional* | https://download.lineageos.org/api | https://my.repo.com/api
 | **POSTBUILD** | Post build script to exec | *optional* |  |/home/build/android/postBuild.sh
