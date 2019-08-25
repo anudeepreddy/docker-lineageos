@@ -1,7 +1,6 @@
 # Build environment for LineageOS
 
 FROM ubuntu:16.04
-MAINTAINER Michael Stucki <michael@stucki.io>
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -21,29 +20,29 @@ RUN apt-get install -y android-tools-adb android-tools-fastboot
 RUN apt-get install -y bc bsdmainutils file screen
 RUN apt-get install -y bash-completion wget nano
 
-RUN useradd build && rsync -a /etc/skel/ /home/build/
+RUN useradd gitpod && rsync -a /etc/skel/ /workspace/docker-lineageos/
 
-RUN mkdir /home/build/bin
-RUN curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > /home/build/bin/repo
-RUN chmod a+x /home/build/bin/repo
+RUN mkdir /workspace/docker-lineageos/bin
+RUN curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > /workspace/docker-lineageos/bin/repo
+RUN chmod a+x /workspace/docker-lineageos/bin/repo
 
 # Add sudo permission
-RUN echo "build ALL=NOPASSWD: ALL" > /etc/sudoers.d/build
+RUN echo "gitpod ALL=NOPASSWD: ALL" > /etc/sudoers.d/gitpod
 
-ADD startup.sh /home/build/startup.sh
-RUN chmod a+x /home/build/startup.sh
+ADD startup.sh /workspace/docker-lineageos/startup.sh
+RUN chmod a+x /workspace/docker-lineageos/startup.sh
 
 # Fix ownership
-RUN chown -R build:build /home/build
+RUN chown -R gitpod:gitpod /workspace/docker-lineageos
 
 # Set global variables
 ADD android-env-vars.sh /etc/android-env-vars.sh
 RUN echo "source /etc/android-env-vars.sh" >> /etc/bash.bashrc
 
-VOLUME /home/build/android
+VOLUME /workspace/docker-lineageos/android
 VOLUME /srv/ccache
 
-CMD /home/build/startup.sh
+CMD /workspace/docker-lineageos/startup.sh
 
-USER build
-WORKDIR /home/build/android
+USER gitpod
+WORKDIR /workspace/docker-lineageos/android
